@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
     s.description = "Gem to consume APIs available at developers.leroymerlin.com.br"
     s.authors     = ["PRTE - Tecnologia e Soluções"]
     s.email       = 'contato@prte.com.br'
-    s.files       = ["lib/lmb-developers.rb"]
+    s.files       = ["lib/lmb.rb"]
     s.homepage    =
       'http://rubygems.org/gems/lmb-developers'
     s.license       = 'MIT'
