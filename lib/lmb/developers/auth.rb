@@ -13,7 +13,7 @@ module Lmb
                     uri = URI.parse("https://api-test.leroymerlin.com.br/v1/auth/login")
                     request = Net::HTTP::Post.new(uri)
                     request.content_type = "application/x-www-form-urlencoded"
-                    request["Apikey"] = "eoxcVbxdzNdzZUqdTRNnAnuA397IKhVt"
+                    request["Apikey"] = ""
                     request["Cache-Control"] = "no-cache"
                     request.body = "username=#{username}&password=#{password}&userType=#{user_type}"
         
@@ -29,7 +29,7 @@ module Lmb
                     if response.code == 200
                         result
                     else
-                        fail StandardError, JSON.parse(response.body)
+                        fail Error, JSON.parse(response.body)
                     end
         
                 rescue => exception
