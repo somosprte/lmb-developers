@@ -59,7 +59,7 @@ Lmb::Developers::Auth.login("ldap_username", "ldap_password", "ldap_usertype = e
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/lmb-developers/fork )
+1. Fork it ( https://github.com/somosprte/lmb-developers/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
