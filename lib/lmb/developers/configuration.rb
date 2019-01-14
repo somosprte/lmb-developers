@@ -1,7 +1,11 @@
 module Lmb
     module Developers
       class Configuration
-
+        attr_accessor :api_key,
+                      :environment
+        attr_reader :url
+        
+        # Initial config.
         def initialize
             @config = {
                 'TEST' => {
@@ -13,10 +17,16 @@ module Lmb
             }
             configure('TEST', nil)
         end
-
-        def configure(enviroment = 'TEST', api_key)
+        # Configure global parameters
+        #
+        # @param environment [String] environment to consume APIs, `TEST` or `PROD`
+        # @param api_key [String] ApiKey to consume APIs.
+        # @return [Lmb::Developers::Configuration]
+        def configure(environment = 'TEST', api_key)
             @api_key = api_key
-            @enviroment = enviroment
+            @environment = environment
+            @url = @config[environment][:url]
+            self
         end
       end
     end
