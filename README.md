@@ -1,4 +1,6 @@
 [![Gem Version](https://badge.fury.io/rb/lmb-developers.svg)](http://badge.fury.io/rb/lmb-developers)
+[![Maintainability](https://api.codeclimate.com/v1/badges/379c8d6d26abf532b045/maintainability)](https://codeclimate.com/github/somosprte/lmb-developers/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/379c8d6d26abf532b045/test_coverage)](https://codeclimate.com/github/somosprte/lmb-developers/test_coverage)
 
 # Lmb Developers
 
@@ -26,14 +28,26 @@ Or install it yourself as:
 
 ```ruby
 
-# Pass environment and api_key to configure
-Lmb::Developers.configure('environment', 'api_key')
+# Pass environment and api_key to configure. Note: Use ENV variables to protect data in production environment
+Lmb::Developers.configure('environment', ENV['LMB_API_KEY'])
 
 ```
 
 The environment can be 'TEST' or 'PROD'.
 
-You will need an api_key that can be obtained at [Leroy Merlin Brazil Developer's Portal](https://developers.leroymerlin.com.br)
+You will need an API KEY that can be obtained at [Leroy Merlin Brazil Developer's Portal](https://developers.leroymerlin.com.br)
+
+### Example
+
+```ruby
+
+#config/initilizers/lmb_developers.rb
+Lmb::Developers.configure('TEST', ENV['LMB_API_KEY'])
+
+#app/controller/login.rb
+Lmb::Developers::Auth.login("ldap_username", "ldap_password")
+
+```
 
 ### Methods
 
