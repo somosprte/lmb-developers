@@ -2,7 +2,7 @@
 
 # Lmb Developers
 
-A ruby wrapper for the Leroy Merlin Brazil Developers API available at [Leroy Merlin Brazil Developer's Portal] (https://developers.leroymerlin.com.br)
+A ruby wrapper for the Leroy Merlin Brazil Developers API available at [Leroy Merlin Brazil Developer's Portal](https://developers.leroymerlin.com.br)
 
 ## Installation
 
