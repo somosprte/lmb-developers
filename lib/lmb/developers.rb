@@ -2,6 +2,7 @@ require 'net/http'
 require 'json'
 require 'lmb/developers/configuration'
 require 'lmb/developers/auth'
+require 'lmb/developers/loyalty'
 require 'lmb/developers/error'
 module Lmb
     module Developers
