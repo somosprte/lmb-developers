@@ -8,21 +8,24 @@ module Lmb
         # Initial config.
         def initialize
             @config = {
+                'DEV' => {
+                    'url': 'https://api-dev.leroymerlin.com.br'
+                },
                 'TEST' => {
                     'url': 'https://api-test.leroymerlin.com.br'
                 },
                 'PROD' => {
-                    'url' => 'https://api.leroymerlin.com.br',
+                    'url': 'https://api.leroymerlin.com.br'
                 }
             }
-            configure('TEST', nil)
+            configure('DEV', nil)
         end
         # Configure global parameters
         #
         # @param environment [String] environment to consume APIs, `TEST` or `PROD`
         # @param api_key [String] ApiKey to consume APIs.
         # @return [Lmb::Developers::Configuration]
-        def configure(environment = 'TEST', api_key)
+        def configure(environment = 'DEV', api_key)
             @api_key = api_key
             @environment = environment
             @url = @config[environment][:url]
