@@ -42,7 +42,7 @@ You will need an API KEY that can be obtained at [Leroy Merlin Brazil Developer'
 ```ruby
 
 #config/initilizers/lmb_developers.rb
-Lmb::Developers.configure('TEST', ENV['LMB_API_KEY'])
+Lmb::Developers.configure('DEV', ENV['LMB_API_KEY'])
 
 #app/controller/login.rb
 Lmb::Developers::Auth.login("ldap_username", "ldap_password")
