@@ -7,6 +7,7 @@ module Lmb
       VOUCHER_EXPIRED_PATH = '/v1/loyalty/voucher/expired'.freeze
       VOUCHER_PROVISIONED_PATH = '/v1/loyalty/voucher/provisioned'.freeze
       VOUCHER_ACTIVATED_PATH = '/v1/loyalty/voucher/activated'.freeze
+      SCORING_REDEMPTION_PATH = '/v1/loyalty/redemption'.freeze
 
       # Set Inhabitant's Expired Vouchers.
       #
@@ -80,6 +81,25 @@ module Lmb
       # Get configuration.
       def self.configuration
         @configuration = Lmb::Developers.configuration
+      end
+
+      def self.redemption_ltm
+        uri = URI.parse("#{configuration.url}#{SCORING_REDEMPTION_PATH}")
+        request = Net::HTTP::Post.new(uri)
+        request['Apikey'] = configuration.api_key.to_s
+        request['Cache-Control'] = 'no-cache'
+        request.body = JSON.dump(
+          'redemptions' => redemptions
+        )
+        req_options = {
+          use_ssl: uri.scheme == 'https'
+        }
+        response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+          http.request(request)
+        end
+        response.code.to_i == 202
+      rescue StandardError => exception
+        exception
       end
     end
   end
