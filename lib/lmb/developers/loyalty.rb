@@ -83,7 +83,7 @@ module Lmb
         @configuration = Lmb::Developers.configuration
       end
 
-      def self.redemption_ltm
+      def self.redemption(redemptions)
         uri = URI.parse("#{configuration.url}#{SCORING_REDEMPTION_PATH}")
         request = Net::HTTP::Post.new(uri)
         request['Apikey'] = configuration.api_key.to_s
