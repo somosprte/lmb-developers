@@ -88,9 +88,7 @@ module Lmb
         request = Net::HTTP::Post.new(uri)
         request['Apikey'] = configuration.api_key.to_s
         request['Cache-Control'] = 'no-cache'
-        request.body = JSON.dump(
-          'redemptions' => redemptions
-        )
+        request.body = redemptions
         req_options = {
           use_ssl: uri.scheme == 'https'
         }
