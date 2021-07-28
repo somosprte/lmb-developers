@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
     s.name        = 'lmb-developers'
-    s.version     = '1.2.1'
+    s.version     = '1.2.2'
     s.date        = '2019-05-19'
     s.summary     = "Consume APIs at Leroy Merlin Brazil Developer's Portal"
     s.description = "Gem to consume APIs available at Leroy Merlin Brazil Developer's Portal https://developers.leroymerlin.com.br"
