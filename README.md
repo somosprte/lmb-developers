@@ -26,6 +26,10 @@ Or install it yourself as:
 
 ### Configuration
 
+To use the terminal use the following command:
+
+    $ irb -Ilib -rlmb/developers
+
 ```ruby
 
 # Pass environment and api_key to configure. Note: Use ENV variables to protect data in production environment
