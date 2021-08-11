@@ -84,19 +84,48 @@ module Lmb
       end
 
       def self.redemption(redemptions)
+        puts "-"*25
+        puts "entrou no metodo"
+        puts "-"*25
         uri = URI.parse("#{configuration.url}#{SCORING_REDEMPTION_PATH}")
+        puts "-"*25
+        puts uri = URI.parse("#{configuration.url}#{SCORING_REDEMPTION_PATH}")
+        puts "-"*25
         request = Net::HTTP::Post.new(uri)
+        puts "-"*25
+        puts request = Net::HTTP::Post.new(uri)
+        puts "-"*25
         request['Apikey'] = configuration.api_key.to_s
+        puts "-"*25
+        puts request['Apikey'] = configuration.api_key.to_s
+        puts "-"*25
         request['Cache-Control'] = 'no-cache'
+        puts "-"*25
+        puts request['Cache-Control'] = 'no-cache'
+        puts "-"*25
         request.body = redemptions
+        puts "-"*25
+        puts request.body = redemptions
+        puts "-"*25
         req_options = {
           use_ssl: uri.scheme == 'https'
         }
+        puts "-"*25
+        puts req_options = {
+          use_ssl: uri.scheme == 'https'
+        }
+        puts "-"*25
         response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
           http.request(request)
         end
+        puts "-"*25
+        puts response.code.to_i
+        puts "-"*25
         response.code.to_i == 202
       rescue StandardError => exception
+        puts "-"*25
+        puts "chegou no erro"
+        puts "-"*25
         exception
       end
     end
