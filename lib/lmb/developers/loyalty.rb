@@ -97,13 +97,6 @@ module Lmb
         end
         response.code.to_i == 202
       rescue StandardError => exception
-        puts "-"*25
-        puts "-"*25
-        puts "-"*25
-        puts exception.message
-        puts "-"*25
-        puts "-"*25
-        puts "-"*25
         exception
       end
     end
